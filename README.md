@@ -1,4 +1,4 @@
-## Core Concepts
+## Core concepts
 
 - why?(aka "do one thing well" / [Unix Philosophy](http://en.wikipedia.org/wiki/Unix_philosophy))
 - npm (creating a package/consuming a package) / modular.js
@@ -12,7 +12,7 @@
     - [npm-dom](https://github.com/npm-dom)
 - testing
 
-## Useful Modules
+## Useful modules
 
 - Event handling: [dom-delegate](https://www.npmjs.org/package/dom-delegate)
 - [EventEmitter](http://nodejs.org/api/events.html)
@@ -23,7 +23,7 @@
 - [attr-bind](https://www.npmjs.org/package/attr-bind)
 - Modular CSS examples
 
-## useful tools
+## Useful tools
 
 - [RequireBin](http://requirebin.com/)
 - [Browserify CDN](http://wzrd.in/)
