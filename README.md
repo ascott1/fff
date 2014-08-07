@@ -14,14 +14,14 @@
 
 ## Useful modules
 
-- Event handling: [dom-delegate](https://www.npmjs.org/package/dom-delegate)
-- [EventEmitter](http://nodejs.org/api/events.html)
-- Routing: [location-bar](https://www.npmjs.org/package/location-bar) or [page](https://www.npmjs.org/package/page)
-- Templating
-- Ajax: [Super Agent](https://www.npmjs.org/package/superagent)
+- [dom-delegate](https://www.npmjs.org/package/dom-delegate)
+- [Event Emitter](http://nodejs.org/api/events.html)
+- [location-bar](https://www.npmjs.org/package/location-bar)
+- [page](https://www.npmjs.org/package/page)
+- [Super Agent](https://www.npmjs.org/package/superagent)
 - [dom-ready](https://www.npmjs.org/package/domready)
 - [attr-bind](https://www.npmjs.org/package/attr-bind)
-- Modular CSS examples
+- [reactive](https://www.npmjs.org/package/reactive)
 
 ## Useful tools
 
