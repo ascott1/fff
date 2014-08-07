@@ -15,11 +15,11 @@
 ## Useful Modules
 
 - Event handling: [dom-delegate](https://www.npmjs.org/package/dom-delegate)
+- [EventEmitter](http://nodejs.org/api/events.html)
 - Routing: [location-bar](https://www.npmjs.org/package/location-bar) or [page](https://www.npmjs.org/package/page)
-- Templating: handlebars (other templating engines would work, but I'm partial to Handelbars)
+- Templating
 - Ajax: [Super Agent](https://www.npmjs.org/package/superagent)
 - [dom-ready](https://www.npmjs.org/package/domready)
-- [EventEmitter](http://smalljs.org/object/events/event-emitter/)
 - [attr-bind](https://www.npmjs.org/package/attr-bind)
 - Modular CSS examples
 
