@@ -1,6 +1,6 @@
-# Routing Example
+# Reactive - Basic Example
 
-This is a basic routing example. To run the example:
+This is a very basic example using [reactive](https://github.com/component/reactive):
 
 ```
 npm install
