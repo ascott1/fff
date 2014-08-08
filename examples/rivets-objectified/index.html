@@ -19,12 +19,11 @@
 
         <div id='display'></div>
 
-        <script src="https://rawgit.com/jdarling/Object.observe/master/Object.observe.poly.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
         <script src="https://rawgit.com/cfpb/objectified/master/dist/objectified.js"></script>
         <script src='https://rawgit.com/mikeric/rivets/master/dist/rivets.js'></script>
+        <script src="http://wzrd.in/standalone/format-usd@latest"></script>
         <section id="template">
-          <p>With a minimum credit of {loan.mincredit} and a max of {loan.maxcredit}, you can afford a house costing {loan.price} if you put {loan.percentDown}% down. In case you were wondering, your browser window is {loan.viewportWidth}px wide.</p>
+          <p>With a minimum credit of {loan.mincredit} and a max of {loan.maxcredit}, you can afford a house costing {loan.price | money} if you put {loan.percentDown | rounded}% down. In case you were wondering, your browser window is {loan.viewportWidth}px wide.</p>
         </section>
         <script>
           var loan = objectified([
@@ -52,9 +51,17 @@
             }
           ]);
         
-          var view = rivets.bind($('#template'), {
+          var view = rivets.bind(document.getElementById('template'), {
             loan: loan
           });
+
+          view.formatters.money = function(value){
+            return formatUsd( value );
+          }
+
+          view.formatters.rounded = function(value){
+            return Math.round( value );
+          }
 
         </script>
     </body>
