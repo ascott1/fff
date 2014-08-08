@@ -22,6 +22,8 @@
 - [dom-ready](https://www.npmjs.org/package/domready)
 - [attr-bind](https://www.npmjs.org/package/attr-bind)
 - [reactive](https://www.npmjs.org/package/reactive)
+- [ractive](http://www.ractivejs.org/)
+- [objectified](https://www.npmjs.org/package/objectified)
 
 ## Useful tools
 
