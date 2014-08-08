@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <title>Ractive objectified</title>
+        <!--[if lt IE 9]>
+          <script src="https://rawgit.com/jonathantneal/3748027/raw/c58a272ef9d9e0f55ea5e90ac313e3a3b2f2b7b3/eventListener.polyfill.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        
+        <h1>Ractive test</h1>
+
+        credit score: <input type="range" min="600" max="840" value="700" data-objectify="credit-score"><br>
+        house price: <input type="text" placeholder="400000" data-objectify="house-price"><br>
+        down payment: <input type="text" placeholder="20000" data-objectify="down-payment">
+
+        <div id='display'></div>
+
+        <script src="https://rawgit.com/cfpb/objectified/master/dist/objectified.js"></script>
+        <script src='https://rawgit.com/mikeric/rivets/master/dist/rivets.js'></script>
+        <script src="http://wzrd.in/standalone/format-usd@latest"></script>
+        <section id="template">
+          <p>With a minimum credit of {loan.mincredit} and a max of {loan.maxcredit}, you can afford a house costing {loan.price | money} if you put {loan.percentDown | rounded}% down. In case you were wondering, your browser window is {loan.viewportWidth}px wide.</p>
+        </section>
+        <script>
+          var loan = objectified([
+            {
+              name: 'mincredit',
+              source: 'credit-score'
+            },
+            {
+              name: 'maxcredit',
+              source: 'credit-score + 20'
+            },
+            {
+              name: 'price',
+              source: 'house-price'
+            },
+            {
+              name: 'percentDown',
+              source: 'down-payment / house-price * 100'
+            },
+            {
+              name: 'viewportWidth',
+              source: function() {
+                return document.documentElement.clientWidth;
+              }
+            }
+          ]);
+        
+          var view = rivets.bind(document.getElementById('template'), {
+            loan: loan
+          });
+
+          view.formatters.money = function(value){
+            return formatUsd( value );
+          }
+
+          view.formatters.rounded = function(value){
+            return Math.round( value );
+          }
+
+        </script>
+    </body>
+</html>
